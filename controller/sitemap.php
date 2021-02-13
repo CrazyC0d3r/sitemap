@@ -277,7 +277,7 @@ class sitemap
 			if ($topic_row['topic_status'] <> ITEM_MOVED)
 			{
 				$url_data[] = [
-					'url'	=> $this->board_url .  '/viewtopic.' . $this->php_ext . '?f=' . $topic_row['forum_id'] . '&amp;t=' . $topic_row['topic_id'],
+					'url'	=> $this->board_url .  '/viewtopic.' . $this->php_ext . '?t=' . $topic_row['topic_id'],
 					'time'	=> $topic_row['topic_last_post_time'],
 					'prio'	=> number_format($topic_priority,1),
 					'freq'	=> $topic_freq,
@@ -294,7 +294,7 @@ class sitemap
 					{
 						$start = $start + $this->config['posts_per_page'];
 						$url_data[] = [
-							'url'	=> $this->board_url . '/viewtopic.' . $this->php_ext . '?f=' . $topic_row['forum_id'] . '&amp;t=' . $topic_row['topic_id'] . '&amp;start=' . $start,
+							'url'	=> $this->board_url . '/viewtopic.' . $this->php_ext . '?t=' . $topic_row['topic_id'] . '&amp;start=' . $start,
 							'time'	=> $topic_row['topic_last_post_time'],
 							'prio'	=> number_format(($topic_priority*0.95),1),
 							'freq'	=> $topic_freq,
@@ -572,7 +572,7 @@ class sitemap
 				if ($topic_row['topic_status'] <> ITEM_MOVED)
 				{
 					$url_data[] = [
-						'url'	=> $this->board_url .  '/viewtopic.' . $this->php_ext . '?f=' . $id . '&amp;t=' . $topic_row['topic_id'],
+						'url'	=> $this->board_url .  '/viewtopic.' . $this->php_ext . '?t=' . $topic_row['topic_id'],
 						'time'	=> $topic_row['topic_last_post_time'],
 						'prio'	=> number_format($topic_priority,1),
 						'freq'	=> $topic_freq,
@@ -589,7 +589,7 @@ class sitemap
 						{
 							$start = $start + $this->config['posts_per_page'];
 							$url_data[] = [
-								'url'	=> $this->board_url . '/viewtopic.' . $this->php_ext . '?f=' . $id . '&amp;t=' . $topic_row['topic_id'] . '&amp;start=' . $start,
+								'url'	=> $this->board_url . '/viewtopic.' . $this->php_ext . '?t=' . $topic_row['topic_id'] . '&amp;start=' . $start,
 								'time'	=> $topic_row['topic_last_post_time'],
 								'prio'	=> number_format(($topic_priority*0.95),1),
 								'freq'	=> $topic_freq,
@@ -636,7 +636,7 @@ class sitemap
 		 */
 		$add_data = [
 			0 => [
-				'loc' => 'https://yourdomian.tld/board_location/viewtopic.php?f=39&amp;t=3245',  //Full domain name including the https values
+				'loc' => 'https://yourdomian.tld/board_location/viewtopic.php?t=3245',  //Full domain name including the https values
 				'lastmod' => '1456454541', //Unix timestamp of when page last updated.
 				'image' => [
 					0 => [
@@ -651,7 +651,7 @@ class sitemap
 			],
 
 			1 => [
-				'loc' => 'http://yourdomian.tld/board_location/viewtopic.php?f=39&amp;t=3245', //Full domain name including the https values
+				'loc' => 'http://yourdomian.tld/board_location/viewtopic.php?t=3245', //Full domain name including the https values
 				'lastmod' => '1456454541', //Unix timestamp of when page last updated.
 				'image' => '', //If no image pass a '' in the image field.
 			],
